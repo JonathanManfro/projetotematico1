@@ -1,17 +1,14 @@
 package projetotematico;
 
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
 public class InitialScreen extends JFrame {
     public InitialScreen() {
         setTitle("Tela Principal");
-        setSize(400, 300);
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -21,9 +18,17 @@ public class InitialScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Fecha a tela atual
-                SecundaryScreen secundaryscreen = new SecundaryScreen(); // Abre a tela secundária
-                secundaryscreen.setVisible(true);
-                secundaryscreen.tocar();
+                String message = "APÓS 5 SEGUNDOS VOCÊ SERÁ DIRECIONADO A TELA DE PERGUNTAS";
+                // Abre a tela secundária em uma thread separada
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        PlayMusicScreen playMusic = new PlayMusicScreen(message);
+                        playMusic.setVisible(true);
+                        // Inicia a reprodução de música na tela secundária
+                        playMusic.iniciarTocar();
+                    }
+                });
             }
         });
 
@@ -33,7 +38,6 @@ public class InitialScreen extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 new InitialScreen().setVisible(true);
             }
