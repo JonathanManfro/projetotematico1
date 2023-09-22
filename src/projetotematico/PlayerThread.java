@@ -2,9 +2,6 @@ package projetotematico;
 
 import javazoom.jl.player.Player;
 
-/**
-	 * Manipula threads para executar as músicas
-	 */
 	public class PlayerThread extends Thread {
 		
 		private Player player;
@@ -13,9 +10,6 @@ import javazoom.jl.player.Player;
 			this.player = player;
 		}
 		
-		/**
-		 * Cria uma thread para tocar uma música
-		 */
 		public void run() {
 			try {
 				player.play();
@@ -24,9 +18,6 @@ import javazoom.jl.player.Player;
 			}
 		}
 		
-		/**
-		 * Encerra a thread que toca música
-		 */
 		public void end() {
 			try {
 				player.close();
