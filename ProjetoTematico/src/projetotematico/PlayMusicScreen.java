@@ -36,7 +36,7 @@ public class PlayMusicScreen extends JFrame {
     }
     
     public void tocar() {
-        ControllerMusicThread controllerMusic = new ControllerMusicThread("C:\\Users\\NL\\eclipse-workspace\\ProjetoTematico\\Musica\\01 Almost with You.mp3");
+        ControllerMusicThread controllerMusic = new ControllerMusicThread("C:\\Users\\User\\Documents\\projetotematico1\\ProjetoTematico\\Musica\\01 Almost with You.mp3");
         controllerMusic.tocar();
         new QuizScreen().setVisible(true);
         setVisible(false);

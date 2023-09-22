@@ -15,10 +15,10 @@ public class ControllerMusicThread {
 	private PlayerThread pt;
 
 	public static void main(String [] args) {
-		ControllerMusicThread exemplo = new ControllerMusicThread("C:\\Users\\NL\\eclipse-workspace\\ProjetoTematico\\Musica\\01 Almost with You.mp3");
+		ControllerMusicThread exemplo = new ControllerMusicThread("C:\\Users\\User\\Documents\\projetotematico1\\ProjetoTematico\\Musica\\01 Almost with You.mp3");
 		exemplo.tocar();
 		try {
-			Thread.sleep(segundos * 1000); // Espera x segundos
+			Thread.sleep(segundos * 1000); 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} 
@@ -31,7 +31,7 @@ public class ControllerMusicThread {
 	
 	public void tocar() {
 		try {
-			this.player = new Player(new FileInputStream("C:\\Users\\NL\\eclipse-workspace\\ProjetoTematico\\Musica\\01 Almost with You.mp3"));
+			this.player = new Player(new FileInputStream("C:\\Users\\User\\Documents\\projetotematico1\\ProjetoTematico\\Musica\\01 Almost with You.mp3"));
 			this.pt = new PlayerThread(this.player);
 			System.out.println("Reproduzindo os primeiros " + segundos + " segundos do arquivo " + nomeArquivo + "...");
 			this.pt.start();

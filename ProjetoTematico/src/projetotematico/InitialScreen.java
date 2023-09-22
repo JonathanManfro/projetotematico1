@@ -18,7 +18,7 @@ public class InitialScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose(); // Fecha a tela atual
-                String message = "APÓS 5 SEGUNDOS VOCÊ SERÁ DIRECIONADO A TELA DE PERGUNTAS";
+                String message = "APÓS 45 SEGUNDOS VOCÊ SERÁ DIRECIONADO A TELA DE PERGUNTAS";
                 // Abre a tela secundária em uma thread separada
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
